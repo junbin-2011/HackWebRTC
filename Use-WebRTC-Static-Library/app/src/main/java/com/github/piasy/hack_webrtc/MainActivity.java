@@ -26,8 +26,13 @@ public class MainActivity extends AppCompatActivity {
 
         mTvResult = findViewById(R.id.mTvResult);
 
-        mAsyncRestClient = new AsyncRestClient();
-        mAsyncRestClient.init();
+        findViewById(R.id.mBtnInit).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAsyncRestClient = new AsyncRestClient();
+                mAsyncRestClient.init();
+            }
+        });
 
         findViewById(R.id.mBtnGet).setOnClickListener(new View.OnClickListener() {
             @Override

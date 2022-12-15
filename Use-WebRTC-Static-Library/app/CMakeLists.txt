@@ -33,6 +33,9 @@ add_library(hack_webrtc SHARED
             src/main/cpp/async_rest_client.cpp
             )
 
+
+add_executable(testWebRTC src/main/cpp/testWebRTC.cpp)
+
 # Include libraries needed for hack_webrtc lib
 target_link_libraries(hack_webrtc
                       android
@@ -44,3 +47,5 @@ target_link_libraries(hack_webrtc
                       ${CWD}/src/main/jniLibs/armeabi-v7a/libcurl.so
                       ${CWD}/src/main/jniLibs/armeabi-v7a/libz.so
                       )
+
+target_link_libraries(testWebRTC android log ${CWD}/libs/webrtc/lib/armeabi-v7a/libwebrtc.a)
